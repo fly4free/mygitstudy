@@ -193,19 +193,14 @@ public:
         else
         {
     char msgBuf[128];
-#ifndef _WIN32
+#ifndef _MSC_VER
             snprintf(msgBuf, 127,
 #else
             _snprintf_s(msgBuf, 127,
 #endif
-             //"returnedCode=0x%.8X, systemErrorCode=%d, internalCode=0x%.8X",
              "returnedCode=%d, systemErrorCode=%d, internalCode=0x%.8X",
              returnedCode, systemErrorCode, internalCode);
-//			int a = 123;
-//			std::stringstream wss;
-//			wss << "a=";
-//			wss << a;
-//			retVal = wss.str();
+
             retVal = msgBuf;
         }
 
