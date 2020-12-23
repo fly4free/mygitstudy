@@ -182,7 +182,7 @@ public:
             return false;
     }
 
-    std::string ToString()
+    virtual std::string ToString()
     {
         std::string retVal;
 
@@ -192,7 +192,7 @@ public:
         }
         else
         {
-    char msgBuf[128];
+            char msgBuf[128];
 #ifndef _MSC_VER
             snprintf(msgBuf, 127,
 #else
